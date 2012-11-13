@@ -1,0 +1,45 @@
+<% content_for :body_content_title do %>
+  <%= @profile.name %>
+<% end %>
+
+<% content_for :body do %>
+  <section>
+    <h1>Name</h1>
+    <p>
+      <%=raw @profile.name %>
+    </p>
+  </section>
+  <section>
+    <h1>Graduation Date</h1>
+    <p>
+      <%=raw @profile.graduation_date %>
+    </p>
+  </section>
+  <section>
+    <h1>Photo</h1>
+    <p>
+      <%= image_fu @profile.photo, nil %>
+    </p>
+  </section>
+  <section>
+    <h1>Biography</h1>
+    <p>
+      <%=raw @profile.biography %>
+    </p>
+  </section>
+<% end %>
+
+<% content_for :side_body do %>
+  <aside>
+    <h2><%= t('.other') %></h2>
+    <ul id="profiles">
+      <% @profiles.each do |profile| %>
+        <li>
+          <%= link_to profile.name, refinery.profiles_profile_path(profile) %>
+        </li>
+      <% end %>
+    </ul>
+  </aside>
+<% end %>
+
+<%= render '/refinery/content_page' %>
