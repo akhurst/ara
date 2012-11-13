@@ -51,8 +51,10 @@ test:
 production:
   adapter: postgresql
   encoding: unicode
-  database: ricealumni_production
+  database: d81jt3a2jgon5u
   pool: 5
-  username: ricealumni
-  password: ricealumnipw
+  username: nbqvjfabptdmxh
+  password: L0DF7i6GXFT2HQYLJaS191OJHl
+  host: ec2-23-23-144-111.compute-1.amazonaws.com
+  port: 5432
   min_messages: warning
